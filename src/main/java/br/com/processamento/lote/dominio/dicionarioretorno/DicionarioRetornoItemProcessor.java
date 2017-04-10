@@ -10,13 +10,13 @@ import org.springframework.batch.item.ItemProcessor;
  * @author marcos.buganeme
  *
  */
-public class DicionarioRetornoItemProcessor implements ItemProcessor<DicionarioRetorno, DicionarioRetorno> {
+public class DicionarioRetornoItemProcessor implements ItemProcessor<DicionarioRetornoArquivoTexto, DicionarioRetorno> {
 
 	private static final Logger log = LoggerFactory.getLogger(DicionarioRetornoItemProcessor.class);
 
 	@Override
-	public DicionarioRetorno process(final DicionarioRetorno dicionario) throws Exception {
-		log.info("Convertendo (" + dicionario + ")");
-		return new DicionarioRetorno(dicionario.getCodigo(), dicionario.getDescricao());
+	public DicionarioRetorno process(final DicionarioRetornoArquivoTexto arquivoTexto) throws Exception {
+		log.info("Convertendo (" + arquivoTexto + ")");
+		return new DicionarioRetorno(arquivoTexto.getCodigo(), arquivoTexto.getDescricao());
 	}
 }

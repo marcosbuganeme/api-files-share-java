@@ -36,14 +36,11 @@ public class ParametroFaturamentoJobListener extends JobExecutionListenerSupport
 		if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
 			log.info("******* JOB PARAMETRO FATURAMENTO CONCLUÍDO *******");
 
-			List<ParametroFaturamento> parametros = jdbcTemplate.query("SELECT condicao_financiamento, data_faturamento, data_vencimento, plano, coeficiente, taxa, "
-					+ " dias_pagamento, tipo_pessoa, tipo_cliente, tipo_operacao, dias_primeiro_vencimento, taxa_antecipacao, codigo_empresa, taxa_cancelamento, taxa_prorrogacao,"
-					+ " tipo_condicao, quantidade_dias_proximo_vencimento FROM parametro_faturamento", rowMapper);
+			List<ParametroFaturamento> parametros = jdbcTemplate.query("SELECT condicaoFinanciamento, dataFaturamento, dataVencimento, plano, coeficiente, taxa, diasPagamento, filial, tipoPessoa, tipoCliente, tipoOperacao, diasPrimeiroVencimento, taxaAntecipacao, codigoEmpresa, taxaCancelamento, taxaProrrogacao, tipoCondicao, quantidadeDiasProximoVencimento from parametro_faturamento", rowMapper);
 
 			for (ParametroFaturamento parametroFaturamento : parametros) {
 				log.info("Registro <" + parametroFaturamento + "> foi gravado na base de dados");
 			}
-
 		}
 	}
 }

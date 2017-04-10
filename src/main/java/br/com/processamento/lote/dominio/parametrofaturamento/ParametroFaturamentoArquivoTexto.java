@@ -1,11 +1,14 @@
 package br.com.processamento.lote.dominio.parametrofaturamento;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 
-public class ParametroFaturamento {
+/**
+ * @author marcos.buganeme
+ */
+public class ParametroFaturamentoArquivoTexto implements Serializable {
 
-  private Integer id;
+  private static final long serialVersionUID = 1L;
+
   private String condicaoFinanciamento;
   private String dataFaturamento;
   private String dataVencimento;
@@ -24,50 +27,8 @@ public class ParametroFaturamento {
   private String taxaProrrogacao;
   private String tipoCondicao;
   private String quantidadeDiasProximoVencimento;
-  private List<String> camposObrigatorios = new ArrayList<>();
-
-  public ParametroFaturamento() {
-  }
-
-  public ParametroFaturamento(final List<String> campos) {
-    this.camposObrigatorios = campos;
-  }
-
-  public ParametroFaturamento(String condicaoFinanciamento, String dataFaturamento,
-      String dataVencimento, String plano, String coeficiente, String taxa,
-      String diasPagamento, String filial, String tipoPessoa, String tipoCliente,
-      String tipoOperacao, String diasPrimeiroVencimento, String taxaAntecipacao,
-      String codigoEmpresa, String taxaCancelamento, String taxaProrrogacao,
-      String tipoCondicao, String quantidadeDiasProximoVencimento) {
-
-    this.condicaoFinanciamento = condicaoFinanciamento;
-    this.dataFaturamento = dataFaturamento;
-    this.dataVencimento = dataVencimento;
-    this.plano = plano;
-    this.coeficiente = coeficiente;
-    this.taxa = taxa;
-    this.diasPagamento = diasPagamento;
-    this.filial = filial;
-    this.tipoPessoa = tipoPessoa;
-    this.tipoCliente = tipoCliente;
-    this.tipoOperacao = tipoOperacao;
-    this.diasPrimeiroVencimento = diasPrimeiroVencimento;
-    this.taxaAntecipacao = taxaAntecipacao;
-    this.codigoEmpresa = codigoEmpresa;
-    this.taxaCancelamento = taxaCancelamento;
-    this.taxaProrrogacao = taxaProrrogacao;
-    this.tipoCondicao = tipoCondicao;
-    this.quantidadeDiasProximoVencimento = quantidadeDiasProximoVencimento;
-    this.camposObrigatorios = new ArrayList<>();
-  }
-
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
+  private String fillerUm;
+  private String fillerDois;
 
   public String getCondicaoFinanciamento() {
     return condicaoFinanciamento;
@@ -213,22 +174,33 @@ public class ParametroFaturamento {
     this.quantidadeDiasProximoVencimento = quantidadeDiasProximoVencimento;
   }
 
-  public List<String> getCamposObrigatorios() {
-    return camposObrigatorios;
+  public String getFillerUm() {
+    return fillerUm;
+  }
+
+  public void setFillerUm(String fillerUm) {
+    this.fillerUm = fillerUm;
+  }
+
+  public String getFillerDois() {
+    return fillerDois;
+  }
+
+  public void setFillerDois(String fillerDois) {
+    this.fillerDois = fillerDois;
   }
 
   @Override
   public String toString() {
-    return "ParametroFaturamento [id=" + id + ", condicaoFinanciamento=" + condicaoFinanciamento
+    return "ParametroFaturamentoArquivoTexto [condicaoFinanciamento=" + condicaoFinanciamento
         + ", dataFaturamento=" + dataFaturamento + ", dataVencimento=" + dataVencimento + ", plano="
-        + plano + ", coeficiente=" + coeficiente + ", taxa=" + taxa + ", "
-        + "diasPagamento=" + diasPagamento + ", filial=" + filial + ", "
-        + "tipoPessoa=" + tipoPessoa
-        + ", tipoCliente=" + tipoCliente + ", tipoOperacao=" + tipoOperacao
-        + ", diasPrimeiroVencimento=" + diasPrimeiroVencimento + ", taxaAntecipacao="
-        + taxaAntecipacao + ", codigoEmpresa=" + codigoEmpresa + ", taxaCancelamento="
-        + taxaCancelamento + ", taxaProrrogacao=" + taxaProrrogacao + ", tipoCondicao="
-        + tipoCondicao + ", quantidadeDiasProximoVencimento=" + quantidadeDiasProximoVencimento
+        + plano + ", coeficiente=" + coeficiente + ", taxa=" + taxa + ", diasPagamento="
+        + diasPagamento + ", filial=" + filial + ", tipoPessoa=" + tipoPessoa + ", tipoCliente="
+        + tipoCliente + ", tipoOperacao=" + tipoOperacao + ", diasPrimeiroVencimento="
+        + diasPrimeiroVencimento + ", taxaAntecipacao=" + taxaAntecipacao + ", codigoEmpresa="
+        + codigoEmpresa + ", taxaCancelamento=" + taxaCancelamento + ", taxaProrrogacao="
+        + taxaProrrogacao + ", tipoCondicao=" + tipoCondicao + ", quantidadeDiasProximoVencimento="
+        + quantidadeDiasProximoVencimento + ", fillerUm=" + fillerUm + ", fillerDois=" + fillerDois
         + "]";
   }
 }

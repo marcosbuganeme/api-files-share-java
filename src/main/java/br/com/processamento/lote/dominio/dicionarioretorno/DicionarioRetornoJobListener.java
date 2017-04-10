@@ -22,13 +22,13 @@ public class DicionarioRetornoJobListener extends JobExecutionListenerSupport {
 
 	private static final Logger log = LoggerFactory.getLogger(DicionarioRetornoJobListener.class);
 
-	private DicionarioRowMapper rowMapper;
+	private DicionarioRetornoRowMapper rowMapper;
 	private final JdbcTemplate jdbcTemplate;
 
 	@Autowired
 	public DicionarioRetornoJobListener(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
-		this.rowMapper = new DicionarioRowMapper();
+		this.rowMapper = new DicionarioRetornoRowMapper();
 	}
 
 	@Override
