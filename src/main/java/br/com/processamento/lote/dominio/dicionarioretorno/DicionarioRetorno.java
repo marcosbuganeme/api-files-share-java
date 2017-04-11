@@ -1,24 +1,9 @@
 package br.com.processamento.lote.dominio.dicionarioretorno;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "dicionario_retorno")
 public class DicionarioRetorno {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
-	@Column(length = 3, nullable = false)
 	private String codigo;
-
-	@Column(length = 255, nullable = false)
 	private String descricao;
 
 	public DicionarioRetorno() {
@@ -29,6 +14,14 @@ public class DicionarioRetorno {
 		super();
 		this.codigo = codigo;
 		this.descricao = descricao;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getCodigo() {
