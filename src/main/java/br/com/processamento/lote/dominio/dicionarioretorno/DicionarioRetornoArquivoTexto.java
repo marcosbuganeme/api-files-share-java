@@ -36,4 +36,10 @@ public class DicionarioRetornoArquivoTexto implements Serializable {
   public void setFiller(String filler) {
     this.filler = filler;
   }
+
+  @Override
+  public String toString() {
+    return "DicionarioRetornoArquivoTexto [codigo=" + codigo + ", descricao=" + descricao
+        + ", filler=" + filler + "]";
+  }
 }

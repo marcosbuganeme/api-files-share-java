@@ -23,7 +23,7 @@ public class ParametroFaturamentoJobListener extends JobExecutionListenerSupport
 	private static final Logger log = LoggerFactory.getLogger(ParametroFaturamentoJobListener.class);
 
 	private final JdbcTemplate jdbcTemplate;
-	private ParametroFaturamentoRowMapper rowMapper;
+	private final ParametroFaturamentoRowMapper rowMapper;
 
 	@Autowired
 	public ParametroFaturamentoJobListener(JdbcTemplate jdbcTemplate) {
@@ -37,10 +37,10 @@ public class ParametroFaturamentoJobListener extends JobExecutionListenerSupport
 			log.info("******* JOB PARAMETRO FATURAMENTO CONCLUÍDO *******");
 
 			List<ParametroFaturamento> parametros = jdbcTemplate.query("SELECT condicaoFinanciamento, dataFaturamento, dataVencimento, plano, coeficiente, taxa, diasPagamento, filial, tipoPessoa, tipoCliente, tipoOperacao, diasPrimeiroVencimento, taxaAntecipacao, codigoEmpresa, taxaCancelamento, taxaProrrogacao, tipoCondicao, quantidadeDiasProximoVencimento from parametro_faturamento", rowMapper);
-
-			for (ParametroFaturamento parametroFaturamento : parametros) {
-				log.info("Registro <" + parametroFaturamento + "> foi gravado na base de dados");
-			}
+			
+//			for (ParametroFaturamento parametroFaturamento : parametros) {
+//				log.info("Registro <" + parametroFaturamento + "> foi gravado na base de dados" + LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+//			}
 		}
 	}
 }
