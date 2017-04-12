@@ -3,11 +3,13 @@ package br.com.processamento.lote.dominio.parametrofaturamento;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
+import org.springframework.stereotype.Component;
 
 /**
  * Responsável por transformar o objeto de domínio
  * @author marcos.buganeme
  */
+@Component
 public class ParametroFaturamentoItemProcessor implements ItemProcessor<ParametroFaturamentoArquivoTexto, ParametroFaturamento> {
 
   private static final Logger log = LoggerFactory.getLogger(ParametroFaturamentoItemProcessor.class);

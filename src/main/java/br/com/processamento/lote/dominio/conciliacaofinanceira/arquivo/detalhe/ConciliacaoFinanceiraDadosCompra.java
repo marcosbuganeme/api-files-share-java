@@ -38,7 +38,7 @@ public interface ConciliacaoFinanceiraDadosCompra extends Detalhe {
   /**
    * @return número da nota fiscal
    */
-  BigInteger numeroTransacao();
+  BigInteger getNumeroTransacao();
 
   /**
    * @return quantidade de parcelas do contrato

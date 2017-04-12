@@ -1,10 +1,12 @@
 package br.com.processamento.lote.dominio.atualizacaocliente;
 
 import org.springframework.batch.item.ItemProcessor;
+import org.springframework.stereotype.Component;
 
 /**
  * @author marcos.buganeme
  */
+@Component
 public class AtualizacaoClienteItemProcessor implements ItemProcessor<AtualizacaoClienteArquivoTexto, AtualizacaoCliente> {
 
   @Override

@@ -20,7 +20,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Component;
 
 import br.com.processamento.lote.dominio.dicionarioretorno.DicionarioRetorno;
 import br.com.processamento.lote.dominio.dicionarioretorno.DicionarioRetornoArquivoTexto;
@@ -30,7 +29,6 @@ import br.com.processamento.lote.dominio.dicionarioretorno.DicionarioRetornoJobL
 /**
  * @author marcos.buganeme
  */
-@Component
 @Configuration
 @EnableBatchProcessing(modular = true)
 public class DicionarioRetornoReader {
@@ -46,7 +44,7 @@ public class DicionarioRetornoReader {
 
   @Bean
   public FlatFileItemReader<DicionarioRetornoArquivoTexto> dicionarioRetornoFlatFileItemReader() {
-      FlatFileItemReader<DicionarioRetornoArquivoTexto> reader = new FlatFileItemReader<DicionarioRetornoArquivoTexto>();
+      final FlatFileItemReader<DicionarioRetornoArquivoTexto> reader = new FlatFileItemReader<DicionarioRetornoArquivoTexto>();
       reader.setResource(RESOURCE);
       reader.setLineMapper(new DefaultLineMapper<DicionarioRetornoArquivoTexto>() {{
           setLineTokenizer(new FixedLengthTokenizer() {{
@@ -59,7 +57,7 @@ public class DicionarioRetornoReader {
       }});
       return reader;
   }
-  
+
   @Bean
   public DicionarioRetornoItemProcessor dicionarioRetornoItemProcessor() {
       return new DicionarioRetornoItemProcessor();

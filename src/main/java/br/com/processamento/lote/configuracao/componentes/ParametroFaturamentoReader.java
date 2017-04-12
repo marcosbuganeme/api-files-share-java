@@ -20,7 +20,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Component;
 
 import br.com.processamento.lote.dominio.parametrofaturamento.ParametroFaturamento;
 import br.com.processamento.lote.dominio.parametrofaturamento.ParametroFaturamentoArquivoTexto;
@@ -30,7 +29,6 @@ import br.com.processamento.lote.dominio.parametrofaturamento.ParametroFaturamen
 /**
  * @author marcos.buganeme
  */
-@Component
 @Configuration
 @EnableBatchProcessing(modular = true)
 public class ParametroFaturamentoReader {
@@ -46,7 +44,7 @@ public class ParametroFaturamentoReader {
 
   @Bean
   public FlatFileItemReader<ParametroFaturamentoArquivoTexto> parametroFaturamentoFlatFileItemReader() {
-      FlatFileItemReader<ParametroFaturamentoArquivoTexto> reader = new FlatFileItemReader<ParametroFaturamentoArquivoTexto>();
+      final FlatFileItemReader<ParametroFaturamentoArquivoTexto> reader = new FlatFileItemReader<ParametroFaturamentoArquivoTexto>();
 
       reader.setResource(RESOURCE);
       reader.setLineMapper(new DefaultLineMapper<ParametroFaturamentoArquivoTexto>() {{
