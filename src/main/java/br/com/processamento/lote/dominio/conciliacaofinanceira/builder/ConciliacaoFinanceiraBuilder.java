@@ -1,8 +1,8 @@
 package br.com.processamento.lote.dominio.conciliacaofinanceira.builder;
 
+import br.com.processamento.lote.dominio.conciliacaofinanceira.ConciliacaoFinanceira;
 import br.com.processamento.lote.dominio.conciliacaofinanceira.arquivo.detalhe.ConciliacaoFinanceiraDadosCompra;
 import br.com.processamento.lote.dominio.conciliacaofinanceira.arquivo.detalhe.ConciliacaoFinanceiraDadosPagamento;
-import br.com.processamento.lote.dominio.conciliacaofinanceira.arquivo.detalhe.impl.ConciliacaoFinanceiraDadosPagamentoImpl;
 import br.com.processamento.lote.dominio.conciliacaofinanceira.arquivo.layout.ConciliacaoFinanceiraLayout;
 
 /**
