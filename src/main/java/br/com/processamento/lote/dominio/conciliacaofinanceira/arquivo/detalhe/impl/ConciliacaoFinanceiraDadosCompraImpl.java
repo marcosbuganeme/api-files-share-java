@@ -89,10 +89,10 @@ public class ConciliacaoFinanceiraDadosCompraImpl implements ConciliacaoFinancei
   }
 
   @Override
-  public BigInteger numeroTransacao() {
-    return numeroTransacao;
+  public BigInteger getNumeroTransacao() {
+  	return numeroTransacao;
   }
-
+  
   @Override
   public Integer getQuantidadeTotalParcelas() {
     return quantidadeTotalParcelas;
@@ -172,4 +172,6 @@ public class ConciliacaoFinanceiraDadosCompraImpl implements ConciliacaoFinancei
   public Optional<Integer> getFiller110Posicoes() {
     return filler110Posicoes;
   }
+
+
 }
